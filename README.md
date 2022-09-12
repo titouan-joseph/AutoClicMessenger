@@ -13,3 +13,14 @@ Vesrion en Python
 1. télécharger les dependances avec ``pip install -r requirements.txt``
 1. télécharger le driver pour FireFox : https://github.com/mozilla/geckodriver/releases/
 1. lancer le programme avec ``python Auto_clic_react.py``
+
+## Heroku
+
+1. mettre les buildpacks suivants : 
+    - ``https://github.com/heroku/heroku-buildpack-google-chrome``
+    - ``https://github.com/heroku/heroku-buildpack-chromedriver``
+    - ``heroku/python``
+1. Configurer les Vars : 
+    - ``CHROMEDRIVER_PATH`` : ``/app/.chromedriver/bin/chromedriver``
+    - ``GOOGLE_CHROME_BIN`` : ``/app/.apt/usr/bin/google-chrome``
+1. Ajouter un fichier `Procfile` avec `worker: python start.py`
